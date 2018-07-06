@@ -2,8 +2,8 @@
   <div>
     <input type="checkbox" (click)="checkboxClick()"  />
     <span>Filtre par Disponibilité</span>
-  <div>
-  <article>
+  </div>
+  <article id="book">
   <div *ngFor="let book of listInfoBook;index as i">
     <p>
 
@@ -13,6 +13,8 @@
 
 
   </div>
-  <app-detail-book *ngIf="infoSelected"></app-detail-book>
+
+
 </article>
+  <app-detail-book id="book_detail" *ngIf="infoSelected" [data]="listeInfoBook[detailInfoSelected]"></app-detail-book>
   <!--{{checkboxClicked}}-->

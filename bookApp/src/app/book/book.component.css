@@ -10,6 +10,21 @@
   margin-left:50px;
 }
 
-article{
+#a{
   display:inline-block;
+}
+
+#book{
+  display:inline-block;
+  border:2px green solid ;
+  padding:10px 10px 10px 10px;
+
+}
+
+#book_detail{
+  display:inline-block;
+  border:2px green solid ;
+  margin-left:10px;
+
+
 }
