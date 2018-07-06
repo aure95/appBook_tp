@@ -9,3 +9,7 @@
   color:red;
   margin-left:50px;
 }
+
+article{
+  display:inline-block;
+}

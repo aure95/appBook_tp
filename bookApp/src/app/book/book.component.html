@@ -3,13 +3,16 @@
     <input type="checkbox" (click)="checkboxClick()"  />
     <span>Filtre par Disponibilité</span>
   <div>
-  <div *ngFor="let book of listInfoBook">
+  <article>
+  <div *ngFor="let book of listInfoBook;index as i">
     <p>
 
-      <span *ngIf="book.avaible || !checkboxClicked">{{book.title}}</span>
+      <span *ngIf="book.avaible || !checkboxClicked" (click)="bookTitleClicked(i)">{{book.title}}</span>
       <span id="avaible" *ngIf="book.avaible">Dispo</span>
       <span id="not-avaible"*ngIf="!book.avaible && !checkboxClicked">Non dispo</span>
 
 
   </div>
+  <app-detail-book *ngIf="infoSelected"></app-detail-book>
+</article>
   <!--{{checkboxClicked}}-->

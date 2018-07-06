@@ -20,6 +20,8 @@ export class BookComponent implements OnInit {
 
   public listInfoBook:<any>[]=[];
   public checkboxClicked:boolean=false;
+  public detailInfoSelected:number=0;
+  public infoSelected:boolean=false;
 
 
 
@@ -41,18 +43,15 @@ export class BookComponent implements OnInit {
     this.checkboxClicked=!this.checkboxClicked;
   }
 
+  bookTitleClicked(i)
+  {
+    //console.log(i);
+    //console.log(this.listInfoBook[i]);
+    this.infoSelected=true;
+    this.detailInfoSelected=i;
+    console.log(this.infoSelected);
+    console.log(this.detailInfoSelected);
+  }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
