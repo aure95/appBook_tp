@@ -1,10 +1,15 @@
 
   <div>
-    <input type="checkbox"  />
+    <input type="checkbox" (click)="checkboxClick()"  />
     <span>Filtre par Disponibilité</span>
   <div>
-  <div>
+  <div *ngFor="let book of listInfoBook">
     <p>
-      <span></span>
-      <span></span>
+
+      <span *ngIf="book.avaible || !checkboxClicked">{{book.title}}</span>
+      <span id="avaible" *ngIf="book.avaible">Dispo</span>
+      <span id="not-avaible"*ngIf="!book.avaible && !checkboxClicked">Non dispo</span>
+
+
   </div>
+  <!--{{checkboxClicked}}-->

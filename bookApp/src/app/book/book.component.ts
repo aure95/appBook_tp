@@ -1,10 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { BookService } from '../services/book.service';
+import {map} from 'rxjs/operators';
 
  interface InfoBook{
     name:string;
     author:string;
+
 }
+
+
 
 @Component({
   selector: 'app-book',
@@ -14,7 +18,9 @@ import { BookService } from '../services/book.service';
 
 export class BookComponent implements OnInit {
 
-  public ListInfoBook:InfoBook[]=[];
+  public listInfoBook:<any>[]=[];
+  public checkboxClicked:boolean=false;
+
 
 
 
@@ -23,21 +29,28 @@ export class BookComponent implements OnInit {
   constructor(public bookService: BookService) {
 
 
-   this.bookService.getBooks()
-   .subscribe((res)=>{
+  this.bookService.getBooks().pipe()
+   .subscribe((res) =>{
      console.log(res);
-     this.ListInfoBook=res;});
+     this.listInfoBook=res;});
   }
 
-
-
-
-
-
-
-
-  ngOnInit() {
+  checkboxClick()
+  {
+    //console.log("checkboxClicked");
+    this.checkboxClicked=!this.checkboxClicked;
   }
+
+}
+
+
+
+
+
+
+
+
+
 
 
 

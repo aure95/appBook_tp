@@ -151,8 +151,7 @@ var books=[{id:0,author:"gfjhgfui",title:"sfhfuh",publicationDate:"12/23/45",ava
 console.log(books);
 
 
-//getBooks
-app.get('/books', (req, res) => res.json(books));
+
 
 
 
@@ -196,6 +195,9 @@ app.get('/students/:id', (req, res) => {
   }
   res.status(404).send('Etudiant inconnu');
 });
+
+//getBooks
+app.get('/books', (req, res) => res.json(books));
 
 
 app.get('/players', (req, res) => res.json(players));

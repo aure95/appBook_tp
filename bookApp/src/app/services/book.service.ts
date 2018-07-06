@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BookService {
 
-  private url:string="http://localhost:5000/books;"
+  private url:string="http://localhost:5000/books";
 
   constructor(public http:HttpClient) { }
 
